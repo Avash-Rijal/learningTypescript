@@ -5,6 +5,24 @@ interface User {
   couponDiscount(couponname: string): number;
 }
 
+interface TakePicture {
+  cameraMode: string;
+  saturation: number;
+  contrast: number;
+}
+
+class Instagram implements TakePicture {
+  constructor(
+    public cameraMode: string,
+    public saturation: number,
+    public contrast: number
+  ) {}
+}
+
+const newapplication = new Instagram("selfie", 24, 22);
+
+console.log(newapplication);
+
 interface Admin extends User {
   role: "admin" | "student" | "moderator";
 }
